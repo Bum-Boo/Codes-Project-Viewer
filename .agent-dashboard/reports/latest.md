@@ -2,16 +2,16 @@
 
 ## Status
 
-Needs review. Mobile sync is planned at the reporting/protocol level only; no cloud sync or mobile app was implemented.
+Needs review. The repository is now connected to GitHub and pushed, while dashboard parser/cloud/mobile implementation remains future work.
 
 ## Latest Update
 
-- Read `report-schema.md`, `current-status.json`, `goals/main.yaml`, and recent run reports.
-- Created `docs/mobile-sync-plan.md`.
-- Created `.agent-dashboard/protocol/sync-safety-rules.md`.
-- Updated `HANDOFF.md` with mobile sync planning notes.
-- Created run report `.agent-dashboard/runs/20260516-070044_mobile-sync-prep.json`.
-- Created thread summary `.agent-dashboard/threads/20260516-070044_mobile-sync-prep.md`.
+- Initialized this directory as a Git repository on branch `main`.
+- Connected remote `origin` to `https://github.com/Bum-Boo/Codes-Project-Viewer.git`.
+- Created initial commit `399e0306d80318be83cf92a3d2df6d0de754dc49`.
+- Pushed `main` to `origin/main`.
+- Created run report `.agent-dashboard/runs/20260516-070508_github-push.json`.
+- Created thread summary `.agent-dashboard/threads/20260516-070508_github-push.md`.
 
 ## Linked Goal
 
@@ -20,36 +20,31 @@ Needs review. Mobile sync is planned at the reporting/protocol level only; no cl
 
 ## Completed Work
 
-- Documented local `.agent-dashboard` files as the source for future sync.
-- Documented the desktop viewer as the local parser and sync agent.
-- Documented a future cloud backend such as Supabase.
-- Documented read-only-first mobile behavior.
-- Documented sync entities: users, devices, projects, goals, runs, reports, blockers, and notifications.
-- Documented redaction and private mode rules.
-- Documented conflict handling for append-only runs, derived current status, and mobile no-write behavior.
+- Repository was initialized with Git.
+- GitHub remote was connected.
+- Current dashboard/reporting files were committed and pushed.
+- Push verification confirmed `origin/main` points to commit `399e0306d80318be83cf92a3d2df6d0de754dc49`.
 
 ## Remaining Work
 
 - Implement a dashboard parser using `report-schema.md`.
-- Implement redaction/private-mode checks before any cloud sync.
-- Design a backend schema if Supabase or another backend is selected.
-- Build a read-only mobile app after the desktop parser and sync agent exist.
+- Enforce `sync-safety-rules.md` before any cloud sync.
 - Replace starter context with product-specific details.
+- Keep pulling from `origin/main` before future work if another environment may push changes.
 
 ## Blockers
 
-- No cloud sync should be implemented until parser, redaction, private mode, and authority rules are implemented.
 - The older placeholder-task blocker remains open until real task details are supplied.
+- Cloud sync and mobile app implementation should wait until parser, redaction, private mode, and authority rules exist.
 
 ## Verification
 
-- Required dashboard files and recent runs were read before edits.
-- Documentation covers all requested mobile sync planning points.
-- All JSON files under `.agent-dashboard` parsed successfully after mobile sync preparation.
-- No application tests were run because only documentation and dashboard reporting files changed.
+- `git remote -v` shows the GitHub origin.
+- `git push -u origin main` succeeded.
+- `git ls-remote origin refs/heads/main` returned the pushed commit hash.
+- All JSON files under `.agent-dashboard` parsed successfully after writing the GitHub push report.
 
 ## Next Recommended Prompts
 
 - "Implement a dashboard parser that reads .agent-dashboard using protocol/report-schema.md and enforces protocol/sync-safety-rules.md without syncing to the cloud yet."
-- "Design a Supabase schema for redacted dashboard sync entities, but do not implement network sync."
 - "Update PROJECT_BRIEF.md with the actual product scope and target users."

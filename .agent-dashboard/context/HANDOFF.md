@@ -8,6 +8,8 @@ The dashboard schema has now been standardized in `.agent-dashboard/protocol/rep
 
 The reporting system is now prepared for future mobile sync at the planning level. `docs/mobile-sync-plan.md` defines the desktop viewer as the local parser and future sync agent, a future cloud backend such as Supabase as the remote store, and the first mobile app as read-only. `.agent-dashboard/protocol/sync-safety-rules.md` defines redaction, private mode, append-only run sync, derived current-status handling, and first-version mobile write restrictions.
 
+The project directory is now initialized as a Git repository. Remote `origin` is connected to `https://github.com/Bum-Boo/Codes-Project-Viewer.git`, branch `main` tracks `origin/main`, and initial commit `399e0306d80318be83cf92a3d2df6d0de754dc49` was pushed successfully.
+
 The consolidated project state remains `needs_review` because no parser, cloud backend, or mobile app has been implemented and the placeholder-task blocker is still open. The dashboard app should normalize legacy reports instead of deleting or rejecting them.
 
 ## What the Next Thread Should Do First
@@ -25,6 +27,7 @@ The consolidated project state remains `needs_review` because no parser, cloud b
 - Normalize legacy statuses in dashboard display without rewriting old reports automatically.
 - Replace the placeholder task body with the actual narrow task before asking a thread to implement it.
 - Replace starter context with the actual product brief.
+- Pull from `origin/main` before future work if another thread or machine may have pushed changes.
 
 ## Migration Notes
 
