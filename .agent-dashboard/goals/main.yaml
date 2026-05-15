@@ -27,8 +27,12 @@ workstreams:
     next_step: "Replace starter brief and architecture notes with product-specific details."
   - id: "dashboard-visualization"
     title: "Visualize dashboard state"
-    status: "not_started"
-    next_step: "Build or configure a reader for current-status.json, thread-index.json, and run reports."
+    status: "done"
+    verification:
+      - "Next.js dashboard app reads current-status.json, project.yaml, goals/main.yaml, runs/*.json, and reports/latest.md."
+      - "Dashboard displays status, current focus, completed count, remaining work, blockers, recent runs, latest report, and parser warnings."
+      - "npm run typecheck and npm run build passed."
+    next_step: "Add fixture-based parser tests and sync-safety enforcement before cloud sync work."
 remaining_questions:
   - "What product or codebase should this coordination protocol support next?"
-  - "Should dashboard reports be consumed by a local UI, a CLI summary, or both?"
+  - "Should dashboard reports also be consumed by a CLI summary?"
