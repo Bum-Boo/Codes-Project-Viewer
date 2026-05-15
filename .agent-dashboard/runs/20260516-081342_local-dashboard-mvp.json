@@ -1,0 +1,104 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "run-20260516-081342-local-dashboard-mvp",
+  "thread_id": "thread-20260516-081342-local-dashboard-mvp",
+  "task_slug": "local-dashboard-mvp",
+  "task": "Implement the first working local dashboard MVP for Codes-Project-Viewer.",
+  "status": "done",
+  "linked_goal": {
+    "goal_id": "main",
+    "workstream_id": "dashboard-visualization",
+    "reason": "The task implements the local dashboard visualizer and parser for the shared .agent-dashboard progress source."
+  },
+  "started_at": "2026-05-16T08:08:30+09:00",
+  "completed_at": "2026-05-16T08:14:18+09:00",
+  "summary": "Built a local-first Next.js dashboard MVP that reads this repository's .agent-dashboard files, normalizes legacy statuses, displays the required project state sections, and reports parser warnings.",
+  "completed_work": [
+    {
+      "title": "Next.js app scaffold",
+      "status": "done",
+      "evidence": "Added package.json, Next.js config, TypeScript config, Tailwind/PostCSS setup, app layout, global styles, and dashboard page."
+    },
+    {
+      "title": "Local dashboard parser",
+      "status": "done",
+      "evidence": "Added parser support for current-status.json, project.yaml, goals/main.yaml, runs/*.json, reports/latest.md, and report-schema.md presence."
+    },
+    {
+      "title": "Status normalization",
+      "status": "done",
+      "evidence": "Added canonical status types and legacy status normalization for older dashboard reports."
+    },
+    {
+      "title": "Dashboard UI",
+      "status": "done",
+      "evidence": "Dashboard displays project status, current focus, completed count, remaining work, blockers, recent runs, parser warnings, and latest report preview."
+    },
+    {
+      "title": "Local verification",
+      "status": "done",
+      "evidence": "TypeScript, production build, and HTTP section checks passed."
+    }
+  ],
+  "remaining_work": [
+    "Add fixture-based parser tests for valid, missing, and malformed .agent-dashboard files.",
+    "Add sync-safety-rules.md enforcement before cloud sync work.",
+    "Replace starter project context with product-specific details."
+  ],
+  "blockers": [
+    {
+      "title": "Placeholder task details",
+      "status": "blocked",
+      "details": "The earlier placeholder implementation request remains blocked until actual task details are supplied."
+    }
+  ],
+  "changed_files": [
+    ".gitignore",
+    "package.json",
+    "package-lock.json",
+    "next-env.d.ts",
+    "next.config.ts",
+    "postcss.config.mjs",
+    "tsconfig.json",
+    "src/app/globals.css",
+    "src/app/layout.tsx",
+    "src/app/page.tsx",
+    "src/lib/dashboard/types.ts",
+    "src/lib/dashboard/status.ts",
+    "src/lib/dashboard/read-dashboard.ts",
+    ".agent-dashboard/current-status.json",
+    ".agent-dashboard/goals/main.yaml",
+    ".agent-dashboard/context/HANDOFF.md",
+    ".agent-dashboard/reports/latest.md",
+    ".agent-dashboard/runs/20260516-081342_local-dashboard-mvp.json",
+    ".agent-dashboard/threads/20260516-081342_local-dashboard-mvp.md"
+  ],
+  "verification": [
+    {
+      "name": "typecheck",
+      "status": "passed",
+      "command": "npm run typecheck",
+      "details": "next typegen and tsc --noEmit completed successfully."
+    },
+    {
+      "name": "production_build",
+      "status": "passed",
+      "command": "npm run build",
+      "details": "Next.js production build completed successfully."
+    },
+    {
+      "name": "local_dashboard_http_check",
+      "status": "passed",
+      "command": "Invoke-WebRequest http://localhost:3000",
+      "details": "Production server returned expected dashboard section text for Project Status, Current Focus, Completed Work, Remaining Work, Blockers, Recent Runs, Latest Report, and Codes Project Viewer."
+    }
+  ],
+  "next_recommended_prompts": [
+    "Add fixture-based parser tests for valid, missing, and malformed .agent-dashboard files in the local dashboard app.",
+    "Extend the local dashboard parser to enforce .agent-dashboard/protocol/sync-safety-rules.md before any cloud sync work."
+  ],
+  "secret_handling": {
+    "secrets_stored": false,
+    "notes": "No secrets, credentials, tokens, cookies, private keys, env files, or raw logs were added."
+  }
+}
