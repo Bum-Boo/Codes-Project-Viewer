@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0.0",
+  "last_updated": "2026-05-16T06:45:49+09:00",
+  "threads": [
+    {
+      "thread_id": "thread-20260516-064350-improve-agents-protocol",
+      "status": "done",
+      "summary": "Updated AGENTS.md with the future-thread coordination protocol and wrote required dashboard reports.",
+      "summary_path": ".agent-dashboard/threads/20260516-064350_improve-agents-protocol.md",
+      "latest_run_report": ".agent-dashboard/runs/20260516-064350_improve-agents-protocol.json",
+      "started_at": "2026-05-16T06:43:50+09:00",
+      "completed_at": "2026-05-16T06:45:49+09:00"
+    },
+    {
+      "thread_id": "thread-20260516-063920-setup-dashboard",
+      "status": "completed",
+      "summary": "Initialized the project coordination dashboard and reporting protocol.",
+      "summary_path": ".agent-dashboard/threads/thread-20260516-063920-setup-dashboard.json",
+      "latest_run_report": ".agent-dashboard/runs/20260516-063920-setup-dashboard.json",
+      "started_at": "2026-05-16T06:39:20+09:00",
+      "completed_at": "2026-05-16T06:42:21+09:00"
+    }
+  ],
+  "thread_summary_schema_example": {
+    "thread_id": "thread-YYYYMMDD-HHMMSS-short-task",
+    "status": "todo | in_progress | partial | blocked | needs_review | done | abandoned",
+    "objective": "Brief task objective",
+    "completed_work": [],
+    "remaining_work": [],
+    "blockers": [],
+    "changed_files": [],
+    "verification": [],
+    "next_recommended_prompts": []
+  }
+}

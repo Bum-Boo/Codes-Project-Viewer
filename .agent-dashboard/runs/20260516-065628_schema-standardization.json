@@ -1,0 +1,88 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "run-20260516-065628-schema-standardization",
+  "thread_id": "thread-20260516-065628-schema-standardization",
+  "task": "Standardize the .agent-dashboard schema so the dashboard app can parse reports consistently.",
+  "status": "done",
+  "linked_goal": {
+    "goal_id": "main",
+    "workstream_id": "protocol-setup",
+    "reason": "Schema standardization supports reliable cross-thread coordination and dashboard parsing."
+  },
+  "started_at": "2026-05-16T06:56:28+09:00",
+  "completed_at": "2026-05-16T06:59:35+09:00",
+  "summary": "Defined TypeScript-compatible schemas, canonical status rules, existing-report warnings, and legacy migration guidance for dashboard parsing.",
+  "completed_work": [
+    {
+      "title": "Full dashboard read",
+      "status": "done",
+      "evidence": "Read all existing files under .agent-dashboard before editing."
+    },
+    {
+      "title": "Schema definition",
+      "status": "done",
+      "evidence": "Updated report-schema.md with TypeScript-compatible schemas for ProjectConfig, CurrentStatus, GoalFile, Goal, Milestone, Task, AgentRunReport, ThreadSummary, VerificationCheck, Blocker, and Decision."
+    },
+    {
+      "title": "Migration guidance",
+      "status": "done",
+      "evidence": "Added legacy status normalization rules and existing-report warnings."
+    }
+  ],
+  "remaining_work": [
+    "Implement the dashboard parser against the documented schemas.",
+    "Normalize legacy statuses in dashboard display.",
+    "Update product-specific project context."
+  ],
+  "blockers": [
+    {
+      "title": "Placeholder task details",
+      "status": "blocked",
+      "details": "The earlier placeholder implementation request remains blocked until actual task details are supplied."
+    }
+  ],
+  "changed_files": [
+    ".agent-dashboard/protocol/report-schema.md",
+    ".agent-dashboard/protocol/status-taxonomy.md",
+    ".agent-dashboard/reports/completion-summary.md",
+    ".agent-dashboard/context/HANDOFF.md",
+    ".agent-dashboard/reports/latest.md",
+    ".agent-dashboard/current-status.json",
+    ".agent-dashboard/runs/20260516-065628_schema-standardization.json",
+    ".agent-dashboard/threads/20260516-065628_schema-standardization.md"
+  ],
+  "verification": [
+    {
+      "name": "dashboard_files_read",
+      "status": "passed",
+      "details": "Read all existing files under .agent-dashboard before editing."
+    },
+    {
+      "name": "schema_example_review",
+      "status": "passed",
+      "details": "The canonical run report example in report-schema.md uses the documented AgentRunReport fields and canonical statuses."
+    },
+    {
+      "name": "json_parse_check",
+      "status": "passed",
+      "details": "All JSON files under .agent-dashboard parsed successfully with PowerShell ConvertFrom-Json after schema updates."
+    },
+    {
+      "name": "interface_presence_check",
+      "status": "passed",
+      "details": "Confirmed report-schema.md contains ProjectConfig, CurrentStatus, GoalFile, Goal, Milestone, Task, AgentRunReport, ThreadSummary, VerificationCheck, Blocker, and Decision interfaces."
+    },
+    {
+      "name": "application_tests",
+      "status": "not_run",
+      "details": "No application code exists in the workspace and no application behavior was changed."
+    }
+  ],
+  "next_recommended_prompts": [
+    "Implement a dashboard parser that reads .agent-dashboard using the schemas in protocol/report-schema.md and normalizes legacy statuses."
+  ],
+  "secret_handling": {
+    "secrets_stored": false,
+    "notes": "No secrets, credentials, tokens, cookies, private keys, or raw logs were added."
+  }
+}

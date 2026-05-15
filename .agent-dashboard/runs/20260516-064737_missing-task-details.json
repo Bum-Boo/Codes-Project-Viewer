@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "run-20260516-064737-missing-task-details",
+  "thread_id": "thread-20260516-064737-missing-task-details",
+  "task": "Proceed with the requested narrow task.",
+  "status": "blocked",
+  "linked_goal": {
+    "goal_id": "main",
+    "workstream_id": null,
+    "notes": "The actual task was not provided, so a specific workstream could not be selected."
+  },
+  "started_at": "2026-05-16T06:47:37+09:00",
+  "completed_at": "2026-05-16T06:47:40+09:00",
+  "summary": "No implementation was performed because the task body was still the placeholder `{여기에 실제 작업 입력}`.",
+  "completed_work": [
+    {
+      "title": "Project state synchronization",
+      "status": "done",
+      "evidence": "Read AGENTS.md, current status, project brief, handoff, main goal, and the available recent run reports."
+    },
+    {
+      "title": "Conflict check",
+      "status": "done",
+      "evidence": "Recent runs were completed setup/protocol runs and did not show active overlapping implementation work."
+    }
+  ],
+  "remaining_work": [
+    "Replace `{여기에 실제 작업 입력}` with the actual narrow task.",
+    "Select the relevant workstream from .agent-dashboard/goals/main.yaml after the actual task is known."
+  ],
+  "blockers": [
+    {
+      "title": "Missing actual task details",
+      "status": "blocked",
+      "details": "The task body contained only the placeholder `{여기에 실제 작업 입력}`."
+    }
+  ],
+  "changed_files": [
+    ".agent-dashboard/current-status.json",
+    ".agent-dashboard/context/HANDOFF.md",
+    ".agent-dashboard/reports/latest.md",
+    ".agent-dashboard/runs/20260516-064737_missing-task-details.json",
+    ".agent-dashboard/threads/20260516-064737_missing-task-details.md"
+  ],
+  "verification": [
+    {
+      "name": "session_start_protocol",
+      "status": "passed",
+      "details": "Read required dashboard files and recent run reports before deciding whether to edit implementation files."
+    },
+    {
+      "name": "task_actionability_check",
+      "status": "failed",
+      "details": "The requested task was a placeholder and did not contain actionable implementation instructions."
+    }
+  ],
+  "next_recommended_prompts": [
+    "Replace `{여기에 실제 작업 입력}` with a concrete narrow task and ask Codex to proceed under AGENTS.md."
+  ],
+  "secret_handling": {
+    "secrets_stored": false,
+    "notes": "No secrets, credentials, tokens, cookies, private keys, or raw logs were added."
+  }
+}

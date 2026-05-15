@@ -1,0 +1,80 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "run-20260516-064350-improve-agents-protocol",
+  "thread_id": "thread-20260516-064350-improve-agents-protocol",
+  "task": "Improve AGENTS.md so every future Codex thread follows the same project coordination protocol.",
+  "status": "done",
+  "linked_goal": {
+    "goal_id": "main",
+    "workstream_id": "protocol-setup"
+  },
+  "started_at": "2026-05-16T06:43:50+09:00",
+  "completed_at": "2026-05-16T06:45:49+09:00",
+  "summary": "Updated AGENTS.md with explicit future-thread session start, reporting, status, done criteria, conflict, and security rules, then updated dashboard handoff and latest reports.",
+  "completed_work": [
+    {
+      "title": "Session start protocol",
+      "status": "done",
+      "evidence": "AGENTS.md now requires reading current status, project brief, handoff, main goal, recent runs, and identifying the linked goal before edits."
+    },
+    {
+      "title": "End-of-task reporting protocol",
+      "status": "done",
+      "evidence": "AGENTS.md now requires unique run JSON reports, Markdown thread summaries, handoff updates, latest report updates, and conflict-aware current status updates."
+    },
+    {
+      "title": "Status, done, conflict, and security rules",
+      "status": "done",
+      "evidence": "AGENTS.md now defines requested statuses, done criteria, conflict rules, and secret/log handling rules."
+    }
+  ],
+  "remaining_work": [
+    "Consider aligning .agent-dashboard/protocol/status-taxonomy.md and report-schema.md with the updated AGENTS.md protocol.",
+    "Replace starter project context with actual product details."
+  ],
+  "blockers": [],
+  "changed_files": [
+    "AGENTS.md",
+    ".agent-dashboard/context/HANDOFF.md",
+    ".agent-dashboard/reports/latest.md",
+    ".agent-dashboard/current-status.json",
+    ".agent-dashboard/threads/thread-index.json",
+    ".agent-dashboard/reports/completion-summary.md",
+    ".agent-dashboard/runs/20260516-064350_improve-agents-protocol.json",
+    ".agent-dashboard/threads/20260516-064350_improve-agents-protocol.md"
+  ],
+  "conflict_check": {
+    "status": "passed",
+    "details": "Read the available recent run report. It covered initial setup and did not indicate active overlapping work on this task."
+  },
+  "verification": [
+    {
+      "name": "dashboard_context_read",
+      "status": "passed",
+      "details": "Read current status, project brief, handoff, main goal, latest report, thread index, project metadata, architecture, decisions, risks, and recent run reports before editing."
+    },
+    {
+      "name": "requirements_coverage_review",
+      "status": "passed",
+      "details": "Confirmed AGENTS.md includes all requested sections: session start, end-of-task reporting, statuses, done criteria, conflict rules, and security rules."
+    },
+    {
+      "name": "json_parse_check",
+      "status": "passed",
+      "details": "All JSON files under .agent-dashboard parsed with PowerShell ConvertFrom-Json after edits."
+    },
+    {
+      "name": "section_presence_check",
+      "status": "passed",
+      "details": "Used rg to confirm AGENTS.md contains Session Start Protocol, End-of-Task Reporting Protocol, Status Definitions, Done Criteria, Conflict Rules, and Security Rules."
+    }
+  ],
+  "next_recommended_prompts": [
+    "Align .agent-dashboard/protocol/status-taxonomy.md and report-schema.md with the newer AGENTS.md protocol.",
+    "Update PROJECT_BRIEF.md with actual product scope and success criteria."
+  ],
+  "secret_handling": {
+    "secrets_stored": false,
+    "notes": "No secrets, credentials, tokens, cookies, or private keys were added."
+  }
+}

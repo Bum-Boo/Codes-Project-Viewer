@@ -1,0 +1,207 @@
+{
+  "schema_version": "1.0.0",
+  "last_updated": "2026-05-16T07:02:36+09:00",
+  "overall_status": "needs_review",
+  "current_focus": "Use standardized dashboard schemas and sync safety rules; implement a local parser before any cloud or mobile sync.",
+  "completed_work": [
+    {
+      "id": "work-20260516-dashboard-setup",
+      "title": "Initialize project coordination dashboard",
+      "status": "done",
+      "summary": "Created the dashboard directory structure, protocol files, starter project context, reports, one run report, and one thread summary.",
+      "verification": [
+        "Confirmed the project directory had no existing dashboard files before creation.",
+        "Created every required path listed in the setup request.",
+        "Reviewed file inventory after setup.",
+        "Parsed all JSON dashboard files successfully."
+      ],
+      "run_report": ".agent-dashboard/runs/20260516-063920-setup-dashboard.json",
+      "thread_summary": ".agent-dashboard/threads/thread-20260516-063920-setup-dashboard.json"
+    },
+    {
+      "id": "work-20260516-improve-agents-protocol",
+      "title": "Improve AGENTS.md coordination protocol",
+      "status": "done",
+      "summary": "Added session start, end-of-task reporting, status definitions, done criteria, conflict rules, and security rules to AGENTS.md.",
+      "verification": [
+        "Read required dashboard state and recent run reports before editing.",
+        "Confirmed no recent overlapping active work.",
+        "Updated AGENTS.md, HANDOFF.md, latest.md, current-status.json, thread index, run report, and thread summary.",
+        "Parsed all dashboard JSON files successfully after edits.",
+        "Confirmed AGENTS.md contains the requested protocol sections."
+      ],
+      "run_report": ".agent-dashboard/runs/20260516-064350_improve-agents-protocol.json",
+      "thread_summary": ".agent-dashboard/threads/20260516-064350_improve-agents-protocol.md"
+    },
+    {
+      "id": "work-20260516-report-thread-work",
+      "title": "Reporting-only thread work summary",
+      "status": "done",
+      "summary": "Summarized actual thread work and refreshed reporting files without implementation changes.",
+      "verification": [
+        "Read required reporting files.",
+        "Reviewed recent run reports.",
+        "Parsed all JSON dashboard files successfully."
+      ],
+      "run_report": ".agent-dashboard/runs/20260516-064932_report-thread-work.json",
+      "thread_summary": ".agent-dashboard/threads/20260516-064932_report-thread-work.md"
+    },
+    {
+      "id": "work-20260516-reporting-conflict-audit",
+      "title": "Audit cross-thread reporting conflicts",
+      "status": "done",
+      "summary": "Audited recent run and thread reports for conflicting claims, duplicate work, overlapping changed files, stale current-status fields, missing prompts, and verification gaps.",
+      "verification": [
+        "Read current-status.json, goals/main.yaml, HANDOFF.md, recent run reports, and recent Markdown thread summaries.",
+        "Updated consolidated dashboard reporting state.",
+        "All dashboard JSON files parsed successfully after audit updates."
+      ],
+      "run_report": ".agent-dashboard/runs/20260516-065228_reporting-conflict-audit.json",
+      "thread_summary": ".agent-dashboard/threads/20260516-065228_reporting-conflict-audit.md"
+    },
+    {
+      "id": "work-20260516-schema-standardization",
+      "title": "Standardize dashboard report schemas",
+      "status": "done",
+      "summary": "Defined TypeScript-compatible schemas, canonical statuses, legacy status migration rules, existing-report warnings, and migration guidance for dashboard parser support.",
+      "verification": [
+        "Read all files under .agent-dashboard before editing.",
+        "Updated report-schema.md and status-taxonomy.md.",
+        "All dashboard JSON files parsed successfully after schema updates.",
+        "Confirmed report-schema.md contains all requested TypeScript-compatible interfaces."
+      ],
+      "run_report": ".agent-dashboard/runs/20260516-065628_schema-standardization.json",
+      "thread_summary": ".agent-dashboard/threads/20260516-065628_schema-standardization.md"
+    },
+    {
+      "id": "work-20260516-mobile-sync-prep",
+      "title": "Prepare dashboard reporting for future mobile sync",
+      "status": "done",
+      "summary": "Documented the future mobile sync architecture, sync entities, redaction rules, private mode, append-only run handling, derived current status, and read-only-first mobile constraints.",
+      "verification": [
+        "Read report-schema.md, current-status.json, goals/main.yaml, and recent run reports before editing.",
+        "Created docs/mobile-sync-plan.md.",
+        "Created .agent-dashboard/protocol/sync-safety-rules.md.",
+        "Confirmed documentation covers requested source, desktop viewer, future backend, read-only mobile, sync entities, redaction, private mode, and conflict rules.",
+        "All dashboard JSON files parsed successfully after mobile sync preparation."
+      ],
+      "run_report": ".agent-dashboard/runs/20260516-070044_mobile-sync-prep.json",
+      "thread_summary": ".agent-dashboard/threads/20260516-070044_mobile-sync-prep.md"
+    }
+  ],
+  "remaining_work": [
+    {
+      "id": "work-local-dashboard-parser",
+      "title": "Implement local dashboard parser and sync-safety enforcement",
+      "status": "todo",
+      "summary": "The desktop viewer/parser does not yet consume report-schema.md or enforce sync-safety-rules.md."
+    },
+    {
+      "id": "work-dashboard-parser",
+      "title": "Implement dashboard parser against standardized schemas",
+      "status": "todo",
+      "summary": "No dashboard app parser currently consumes the standardized schema and migration rules."
+    },
+    {
+      "id": "work-dashboard-consumer",
+      "title": "Build or connect a dashboard visualizer",
+      "status": "todo",
+      "summary": "No UI or automation currently consumes .agent-dashboard files."
+    },
+    {
+      "id": "work-domain-context",
+      "title": "Replace starter context with product-specific details",
+      "status": "todo",
+      "summary": "The initial context describes the coordination protocol, not a product or application domain."
+    },
+    {
+      "id": "work-await-actual-task-details",
+      "title": "Provide actual task details",
+      "status": "blocked",
+      "summary": "An earlier implementation request contained placeholder task text instead of actionable instructions."
+    }
+  ],
+  "blockers": [
+    {
+      "id": "blocker-20260516-missing-task-details",
+      "status": "blocked",
+      "summary": "No implementation can proceed on the placeholder task until actual work instructions are provided.",
+      "run_report": ".agent-dashboard/runs/20260516-064737_missing-task-details.json"
+    }
+  ],
+  "active_threads": [],
+  "recent_runs": [
+    {
+      "run_id": "run-20260516-070044-mobile-sync-prep",
+      "task": "Prepare dashboard reporting system for future mobile sync",
+      "status": "done",
+      "path": ".agent-dashboard/runs/20260516-070044_mobile-sync-prep.json",
+      "completed_at": "2026-05-16T07:02:36+09:00"
+    },
+    {
+      "run_id": "run-20260516-065628-schema-standardization",
+      "task": "Standardize .agent-dashboard schemas for consistent dashboard parsing",
+      "status": "done",
+      "path": ".agent-dashboard/runs/20260516-065628_schema-standardization.json",
+      "completed_at": "2026-05-16T06:59:35+09:00"
+    },
+    {
+      "run_id": "run-20260516-065228-reporting-conflict-audit",
+      "task": "Audit cross-thread reporting conflicts",
+      "status": "done",
+      "path": ".agent-dashboard/runs/20260516-065228_reporting-conflict-audit.json",
+      "completed_at": "2026-05-16T06:54:48+09:00"
+    },
+    {
+      "run_id": "run-20260516-064932-report-thread-work",
+      "task": "Stop implementation work and update only the project reporting files",
+      "status": "done",
+      "path": ".agent-dashboard/runs/20260516-064932_report-thread-work.json",
+      "completed_at": "2026-05-16T06:51:27+09:00"
+    },
+    {
+      "run_id": "run-20260516-064737-missing-task-details",
+      "task": "Proceed with narrow task request",
+      "status": "blocked",
+      "path": ".agent-dashboard/runs/20260516-064737_missing-task-details.json",
+      "completed_at": "2026-05-16T06:47:40+09:00"
+    },
+    {
+      "run_id": "run-20260516-064350-improve-agents-protocol",
+      "task": "Improve AGENTS.md so future Codex threads follow the same coordination protocol",
+      "status": "done",
+      "path": ".agent-dashboard/runs/20260516-064350_improve-agents-protocol.json",
+      "completed_at": "2026-05-16T06:45:49+09:00"
+    }
+  ],
+  "reporting_audit": {
+    "last_audit_run": ".agent-dashboard/runs/20260516-065228_reporting-conflict-audit.json",
+    "status": "needs_review",
+    "findings": [
+      "Older reports use legacy statuses that now require migration normalization.",
+      "thread-index.json is stale and does not include all newer Markdown thread summaries.",
+      "Several threads touched shared reporting files such as HANDOFF.md, latest.md, and current-status.json.",
+      "The placeholder-task blocker remains open."
+    ]
+  },
+  "changed_files": [
+    "docs/mobile-sync-plan.md",
+    ".agent-dashboard/protocol/sync-safety-rules.md",
+    ".agent-dashboard/context/HANDOFF.md",
+    ".agent-dashboard/reports/latest.md",
+    ".agent-dashboard/current-status.json",
+    ".agent-dashboard/runs/20260516-070044_mobile-sync-prep.json",
+    ".agent-dashboard/threads/20260516-070044_mobile-sync-prep.md"
+  ],
+  "next_recommended_prompts": [
+    "Implement a dashboard parser that reads .agent-dashboard using the schemas in protocol/report-schema.md and normalizes legacy statuses.",
+    "Implement a dashboard parser that enforces protocol/sync-safety-rules.md before any cloud sync.",
+    "Replace the placeholder task body with a concrete narrow task and ask Codex to proceed under AGENTS.md.",
+    "Update PROJECT_BRIEF.md with the actual product scope and target users."
+  ],
+  "notes": [
+    "No Git repository was detected during setup, so dashboard files are the initialized progress source.",
+    "No application code was modified during schema standardization.",
+    "No cloud sync or mobile app was implemented during mobile sync preparation."
+  ]
+}

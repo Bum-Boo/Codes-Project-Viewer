@@ -1,0 +1,42 @@
+schema_version: "1.0.0"
+project:
+  name: "Codex Project Status Check"
+  root: "."
+  dashboard_path: ".agent-dashboard"
+  primary_progress_source: ".agent-dashboard"
+  git_dependency: "none"
+  initialized_at: "2026-05-16T06:39:20+09:00"
+  initialized_by: "codex"
+purpose:
+  summary: "Coordinate multiple Codex threads through shared, structured project state."
+  goals_file: ".agent-dashboard/goals/main.yaml"
+  status_file: ".agent-dashboard/current-status.json"
+protocol:
+  version: "1.0.0"
+  reporting_rules: ".agent-dashboard/protocol/reporting-rules.md"
+  report_schema: ".agent-dashboard/protocol/report-schema.md"
+  status_taxonomy: ".agent-dashboard/protocol/status-taxonomy.md"
+required_read_order:
+  - ".agent-dashboard/project.yaml"
+  - ".agent-dashboard/current-status.json"
+  - ".agent-dashboard/goals/main.yaml"
+  - ".agent-dashboard/context/PROJECT_BRIEF.md"
+  - ".agent-dashboard/context/ARCHITECTURE.md"
+  - ".agent-dashboard/context/DECISIONS.md"
+  - ".agent-dashboard/context/KNOWN_RISKS.md"
+  - ".agent-dashboard/context/HANDOFF.md"
+  - ".agent-dashboard/threads/thread-index.json"
+  - ".agent-dashboard/reports/latest.md"
+required_write_outputs:
+  run_report_pattern: ".agent-dashboard/runs/<YYYYMMDD-HHMMSS>-<short-task>.json"
+  thread_summary_pattern: ".agent-dashboard/threads/thread-<YYYYMMDD-HHMMSS>-<short-task>.json"
+  status_updates:
+    - ".agent-dashboard/current-status.json"
+    - ".agent-dashboard/threads/thread-index.json"
+    - ".agent-dashboard/reports/latest.md"
+    - ".agent-dashboard/reports/completion-summary.md"
+constraints:
+  no_secrets_in_reports: true
+  done_requires_verification: true
+  reports_must_be_concise: true
+  progress_not_limited_to_git: true
