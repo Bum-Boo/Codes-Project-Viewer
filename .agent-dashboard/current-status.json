@@ -161,6 +161,13 @@
   "active_threads": [],
   "recent_runs": [
     {
+      "run_id": "run-20260516-081342-local-dashboard-mvp",
+      "task": "Implement the first working local dashboard MVP",
+      "status": "done",
+      "path": ".agent-dashboard/runs/20260516-081342_local-dashboard-mvp.json",
+      "completed_at": "2026-05-16T08:14:18+09:00"
+    },
+    {
       "run_id": "run-20260516-072752-github-description",
       "task": "Add English GitHub repository description",
       "status": "done",
@@ -228,15 +235,28 @@
     ]
   },
   "changed_files": [
+    ".gitignore",
+    "package.json",
+    "package-lock.json",
+    "next-env.d.ts",
+    "next.config.ts",
+    "postcss.config.mjs",
+    "tsconfig.json",
+    "src/app/globals.css",
+    "src/app/layout.tsx",
+    "src/app/page.tsx",
+    "src/lib/dashboard/types.ts",
+    "src/lib/dashboard/status.ts",
+    "src/lib/dashboard/read-dashboard.ts",
     ".agent-dashboard/context/HANDOFF.md",
     ".agent-dashboard/reports/latest.md",
     ".agent-dashboard/current-status.json",
-    ".agent-dashboard/runs/20260516-072752_github-description.json",
-    ".agent-dashboard/threads/20260516-072752_github-description.md"
+    ".agent-dashboard/runs/20260516-081342_local-dashboard-mvp.json",
+    ".agent-dashboard/threads/20260516-081342_local-dashboard-mvp.md"
   ],
   "next_recommended_prompts": [
-    "Implement a dashboard parser that reads .agent-dashboard using the schemas in protocol/report-schema.md and normalizes legacy statuses.",
-    "Implement a dashboard parser that enforces protocol/sync-safety-rules.md before any cloud sync.",
+    "Add fixture-based parser tests for valid, missing, and malformed .agent-dashboard files in the local dashboard app.",
+    "Extend the local dashboard parser to enforce protocol/sync-safety-rules.md before any cloud sync work.",
     "Replace the placeholder task body with a concrete narrow task and ask Codex to proceed under AGENTS.md.",
     "Update PROJECT_BRIEF.md with the actual product scope and target users."
   ],
@@ -245,6 +265,7 @@
     "No application code was modified during schema standardization.",
     "No cloud sync or mobile app was implemented during mobile sync preparation.",
     "Repository origin is https://github.com/Bum-Boo/Codes-Project-Viewer.git and main has been pushed.",
-    "GitHub repository description is set in English."
+    "GitHub repository description is set in English.",
+    "The first local dashboard MVP runs on Next.js and reads .agent-dashboard files from the repository filesystem."
   ]
 }
