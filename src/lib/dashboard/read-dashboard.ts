@@ -20,6 +20,14 @@ import type {
 
 const dashboardRoot = path.join(process.cwd(), ".agent-dashboard");
 
+function toDashboardPath(relativePath: string) {
+  const dashboardRelativePath = relativePath
+    .replace(/^\.agent-dashboard[\\/]/, "")
+    .replace(/^\.agent-dashboard$/, "");
+
+  return path.join(dashboardRoot, dashboardRelativePath);
+}
+
 function addWarning(
   warnings: DashboardWarning[],
   file: string,
@@ -34,7 +42,7 @@ async function readText(
   warnings: DashboardWarning[],
   required = true,
 ): Promise<string | null> {
-  const fullPath = path.join(process.cwd(), relativePath);
+  const fullPath = toDashboardPath(relativePath);
   try {
     return await fs.readFile(fullPath, "utf8");
   } catch (error) {
