@@ -10,6 +10,8 @@ The reporting system is now prepared for future mobile sync at the planning leve
 
 The project directory is now initialized as a Git repository. Remote `origin` is connected to `https://github.com/Bum-Boo/Codes-Project-Viewer.git`, branch `main` tracks `origin/main`, and initial commit `399e0306d80318be83cf92a3d2df6d0de754dc49` was pushed successfully.
 
+The GitHub repository description is set to: "A coordination dashboard protocol for tracking Codex project work with structured reports, schemas, and sync-safety planning."
+
 The consolidated project state remains `needs_review` because no parser, cloud backend, or mobile app has been implemented and the placeholder-task blocker is still open. The dashboard app should normalize legacy reports instead of deleting or rejecting them.
 
 ## What the Next Thread Should Do First

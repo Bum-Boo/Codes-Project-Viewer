@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0.0",
-  "last_updated": "2026-05-16T07:06:20+09:00",
+  "last_updated": "2026-05-16T07:28:45+09:00",
   "overall_status": "needs_review",
-  "current_focus": "Repository is connected to GitHub and pushed; next technical work should implement the local dashboard parser before cloud or mobile sync.",
+  "current_focus": "Repository is connected to GitHub, pushed, and has an English description; next technical work should implement the local dashboard parser before cloud or mobile sync.",
   "completed_work": [
     {
       "id": "work-20260516-dashboard-setup",
@@ -101,6 +101,20 @@
       ],
       "run_report": ".agent-dashboard/runs/20260516-070508_github-push.json",
       "thread_summary": ".agent-dashboard/threads/20260516-070508_github-push.md"
+    },
+    {
+      "id": "work-20260516-github-description",
+      "title": "Add English GitHub repository description",
+      "status": "done",
+      "summary": "Set the GitHub repository description to an English summary of the project dashboard protocol.",
+      "verification": [
+        "gh repo view initially showed an empty description.",
+        "gh repo edit set the repository description.",
+        "gh repo view confirmed the new description.",
+        "All dashboard JSON files parsed successfully after writing the GitHub description report."
+      ],
+      "run_report": ".agent-dashboard/runs/20260516-072752_github-description.json",
+      "thread_summary": ".agent-dashboard/threads/20260516-072752_github-description.md"
     }
   ],
   "remaining_work": [
@@ -145,6 +159,13 @@
   ],
   "active_threads": [],
   "recent_runs": [
+    {
+      "run_id": "run-20260516-072752-github-description",
+      "task": "Add English GitHub repository description",
+      "status": "done",
+      "path": ".agent-dashboard/runs/20260516-072752_github-description.json",
+      "completed_at": "2026-05-16T07:28:45+09:00"
+    },
     {
       "run_id": "run-20260516-070508-github-push",
       "task": "Connect project to GitHub and push",
@@ -206,12 +227,11 @@
     ]
   },
   "changed_files": [
-    ".git repository metadata",
     ".agent-dashboard/context/HANDOFF.md",
     ".agent-dashboard/reports/latest.md",
     ".agent-dashboard/current-status.json",
-    ".agent-dashboard/runs/20260516-070508_github-push.json",
-    ".agent-dashboard/threads/20260516-070508_github-push.md"
+    ".agent-dashboard/runs/20260516-072752_github-description.json",
+    ".agent-dashboard/threads/20260516-072752_github-description.md"
   ],
   "next_recommended_prompts": [
     "Implement a dashboard parser that reads .agent-dashboard using the schemas in protocol/report-schema.md and normalizes legacy statuses.",
@@ -223,6 +243,7 @@
     "No Git repository was detected during setup, so dashboard files are the initialized progress source.",
     "No application code was modified during schema standardization.",
     "No cloud sync or mobile app was implemented during mobile sync preparation.",
-    "Repository origin is https://github.com/Bum-Boo/Codes-Project-Viewer.git and main has been pushed."
+    "Repository origin is https://github.com/Bum-Boo/Codes-Project-Viewer.git and main has been pushed.",
+    "GitHub repository description is set in English."
   ]
 }
