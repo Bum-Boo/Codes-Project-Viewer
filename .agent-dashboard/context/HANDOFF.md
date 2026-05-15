@@ -12,7 +12,9 @@ The project directory is now initialized as a Git repository. Remote `origin` is
 
 The GitHub repository description is set to: "A coordination dashboard protocol for tracking Codex project work with structured reports, schemas, and sync-safety planning."
 
-The consolidated project state remains `needs_review` because no parser, cloud backend, or mobile app has been implemented and the placeholder-task blocker is still open. The dashboard app should normalize legacy reports instead of deleting or rejecting them.
+The first local dashboard MVP is implemented. It uses Next.js, TypeScript, and Tailwind, reads this repository's `.agent-dashboard` files from the local filesystem, normalizes legacy statuses, and displays project status, current focus, completed count, remaining work, blockers, recent runs, latest report content, and parser warnings.
+
+The consolidated project state is now `partial`: the local dashboard MVP is verified, but sync-safety enforcement, fixture-based parser tests, cloud sync, mobile app work, and product-specific context are still future work. The placeholder-task blocker is still open. The dashboard app should continue to normalize legacy reports instead of deleting or rejecting them.
 
 ## What the Next Thread Should Do First
 
@@ -24,7 +26,7 @@ The consolidated project state remains `needs_review` because no parser, cloud b
 
 ## Recommended Next Work
 
-- Build or update the dashboard parser using the TypeScript-compatible schemas in `.agent-dashboard/protocol/report-schema.md`.
+- Add fixture-based parser tests for valid, missing, and malformed `.agent-dashboard` files.
 - Add parser support for `.agent-dashboard/protocol/sync-safety-rules.md` before implementing any cloud sync.
 - Normalize legacy statuses in dashboard display without rewriting old reports automatically.
 - Replace the placeholder task body with the actual narrow task before asking a thread to implement it.
@@ -37,6 +39,7 @@ The consolidated project state remains `needs_review` because no parser, cloud b
 - Older reports may use `verified`, `completed`, `not_started`, `pending_verification`, `active`, `ready`, or `complete`; normalize them using `report-schema.md`.
 - The legacy JSON thread summary should be parsed into the `ThreadSummary` model with `source_format: "json"`.
 - Unknown report fields should be retained as metadata.
+- The local dashboard parser currently uses schema-aligned TypeScript types and built-in normalization; future tests should lock this behavior against fixtures.
 
 ## Mobile Sync Notes
 
@@ -55,3 +58,4 @@ The consolidated project state remains `needs_review` because no parser, cloud b
 - Never mark a work item `done` without recording implementation, verification, documentation, and dashboard reporting evidence.
 - Do not store secrets or long raw logs in `.agent-dashboard`.
 - If no implementation task is supplied, record the attempt as `blocked` or `partial` rather than inventing completed work.
+- The local dashboard can be run with `npm run dev` for development or `npm run build` followed by `npm run start -- --port 3000` for production verification.
