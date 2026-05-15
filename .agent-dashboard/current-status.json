@@ -115,6 +115,19 @@
       ],
       "run_report": ".agent-dashboard/runs/20260516-072752_github-description.json",
       "thread_summary": ".agent-dashboard/threads/20260516-072752_github-description.md"
+    },
+    {
+      "id": "work-20260516-local-dashboard-mvp",
+      "title": "Implement first local dashboard MVP",
+      "status": "done",
+      "summary": "Built a local-first Next.js, TypeScript, and Tailwind dashboard that reads this repository's .agent-dashboard files, normalizes legacy statuses, displays project state, and reports parser warnings.",
+      "verification": [
+        "npm run typecheck passed.",
+        "npm run build passed.",
+        "Production server on http://localhost:3000 returned expected dashboard sections: Project Status, Current Focus, Completed Work, Remaining Work, Blockers, Recent Runs, and Latest Report."
+      ],
+      "run_report": ".agent-dashboard/runs/20260516-081342_local-dashboard-mvp.json",
+      "thread_summary": ".agent-dashboard/threads/20260516-081342_local-dashboard-mvp.md"
     }
   ],
   "remaining_work": [
