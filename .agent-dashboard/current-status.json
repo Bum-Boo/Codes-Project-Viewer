@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0.0",
-  "last_updated": "2026-05-16T07:28:45+09:00",
-  "overall_status": "needs_review",
-  "current_focus": "Repository is connected to GitHub, pushed, and has an English description; next technical work should implement the local dashboard parser before cloud or mobile sync.",
+  "last_updated": "2026-05-16T08:14:18+09:00",
+  "overall_status": "partial",
+  "current_focus": "The first local Next.js dashboard MVP is implemented and verified against this repository's .agent-dashboard files; next work should add stronger fixture tests, sync-safety enforcement, and product-specific context.",
   "completed_work": [
     {
       "id": "work-20260516-dashboard-setup",
