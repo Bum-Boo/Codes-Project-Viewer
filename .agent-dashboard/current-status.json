@@ -134,20 +134,8 @@
     {
       "id": "work-local-dashboard-parser",
       "title": "Implement local dashboard parser and sync-safety enforcement",
-      "status": "todo",
-      "summary": "The desktop viewer/parser does not yet consume report-schema.md or enforce sync-safety-rules.md."
-    },
-    {
-      "id": "work-dashboard-parser",
-      "title": "Implement dashboard parser against standardized schemas",
-      "status": "todo",
-      "summary": "No dashboard app parser currently consumes the standardized schema and migration rules."
-    },
-    {
-      "id": "work-dashboard-consumer",
-      "title": "Build or connect a dashboard visualizer",
-      "status": "todo",
-      "summary": "No UI or automation currently consumes .agent-dashboard files."
+      "status": "partial",
+      "summary": "The local dashboard MVP now reads core .agent-dashboard files and normalizes legacy statuses. It does not yet enforce sync-safety-rules.md or provide fixture-based parser tests."
     },
     {
       "id": "work-domain-context",
